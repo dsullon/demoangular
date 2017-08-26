@@ -5,7 +5,8 @@
  * @description
  * # app
  *
- * Main module of the application.
+ * Main module of the application.}
+ * Los modulos se cargan de manera automatica
  */
 angular
   .module('app', [

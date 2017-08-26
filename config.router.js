@@ -44,7 +44,7 @@ angular.module('app')
           })
           .state('app.home', {
             url: '/home',
-            templateUrl: 'views/home.html',
+            templateUrl: 'views/home.html', // que pagina debe mostrarse y se muestra en el contet, remplaza o agrega a la vista
             resolve: {
               load: function($ocLazyLoad) {
                 return $ocLazyLoad.load({
@@ -101,7 +101,40 @@ angular.module('app')
                 });
               }
             }
-          });
+          })
+          .state('app.solicitudRetiro',{
+            url: '/solicitud',
+            templateUrl: 'views/carta/index.html',
+            resolve: { // cargo lo que necesito, no todo, carga factory, controladores, necesarios para la vista
+              load: function($ocLazyLoad){
+                return $ocLazyLoad.load({
+                  name: "app",
+                  files: [
+                    'models/carta/data.js',
+                    'controllers/carta/index.js'
+                  ]
+                });
+
+              }
+            }
+          })
+          
+          .state('app.cartaDetalle',{
+            url: '/carta/{id:[0-9]{1,4}}',
+            templateUrl: 'views/carta/detalle.html',
+            resolve: { // cargo lo que necesito, no todo, carga factory, controladores, necesarios para la vista
+              load: function($ocLazyLoad){
+                return $ocLazyLoad.load({
+                  name: "app",
+                  files: [
+                    'models/carta/data.js',
+                    'controllers/carta/detalle.js'
+                  ]
+                });
+
+              }
+            }
+          });          
       }
     ]
   );

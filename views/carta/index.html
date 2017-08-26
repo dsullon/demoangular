@@ -1,0 +1,5 @@
+<div class="container2" ng-controller='CartaCtrl'>
+    <div ng-repeat="producto in listaProducto">
+        <p>{{producto.Name}}<a class="btn" ui-sref="app.cartaDetalle({id:producto.Id})">Ver detalle</a></p>
+    </div>
+</div>
