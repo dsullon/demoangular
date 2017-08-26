@@ -1,0 +1,9 @@
+<div class="container2" ng-controller="SullonCtrl">
+    <select class="form-control" ng-change="cambiarValor()" ng-model="data">
+        <option ng-value="producto.Id" ng-repeat="producto in listaProducto">{{producto.Name}}</option>
+    </select>
+
+    {{producto.Name}} <br/>
+    {{producto.Price}} <br/>
+    {{producto.Cost}} <br/>
+</div>

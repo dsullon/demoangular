@@ -101,6 +101,36 @@ angular.module('app')
                 });
               }
             }
+          })
+          .state('app.demoSullon',{
+            url: '/sullon',
+            templateUrl: 'views/sullon/index.html',
+            resolve: {
+              load: function($ocLazyLoad){
+                return $ocLazyLoad.load({
+                  name: "app",
+                  files: [
+                    'models/sullon/data.js',
+                    'controllers/sullon/index.js'
+                  ]
+                });
+              }
+            }
+          })
+          .state('app.sullonDetalle',{
+            url: '/sullon/{id:[0-9]{1,4}}',
+            templateUrl: 'views/sullon/detalle.html',
+            resolve: {
+              load: function($ocLazyLoad){
+                return $ocLazyLoad.load({
+                  name: "app",
+                  files: [
+                    'models/sullon/data.js',
+                    'controllers/sullon/detalle.js'
+                  ]
+                });
+              }
+            }
           });
       }
     ]
