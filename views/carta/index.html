@@ -2,4 +2,7 @@
     <div ng-repeat="producto in listaProducto">
         <p>{{producto.Name}}<a class="btn" ui-sref="app.cartaDetalle({id:producto.Id})">Ver detalle</a></p>
     </div>
+    <select ng-change="cambiarValor()" ng-model="data">
+        <option value="0">Valor 1</option>
+    </select>
 </div>

@@ -1,0 +1,6 @@
+<h1>Listado de Combos</h1>
+<div class="container2" ng-controller='ComboCtrl'>
+    <div ng-repeat="combo in listaCombo">
+        <p>{{combo.Name}}<a class="btn" ui-sref="app.comoboDetalle({id:combo.Id})">Ver detalle</a></p>
+    </div>
+</div>

@@ -105,7 +105,7 @@ angular.module('app')
           .state('app.solicitudRetiro',{
             url: '/solicitud',
             templateUrl: 'views/carta/index.html',
-            resolve: { // cargo lo que necesito, no todo, carga factory, controladores, necesarios para la vista
+            resolve: { // estoy analizando esto
               load: function($ocLazyLoad){
                 return $ocLazyLoad.load({
                   name: "app",
@@ -134,7 +134,25 @@ angular.module('app')
 
               }
             }
-          });          
+          })
+          
+          .state('app.combo',{
+            url: '/combo',
+            templateUrl: 'views/combo/index.html',
+            resolve: { // cargo lo que necesito, no todo, carga factory, controladores, necesarios para la vista
+              load: function($ocLazyLoad){
+                return $ocLazyLoad.load({
+                  name: "app",
+                  files: [
+                    'models/combo/data.js',
+                    'controllers/combo/index.js'
+                  ]
+                });
+
+              }
+            }
+          });
+
       }
     ]
   );
